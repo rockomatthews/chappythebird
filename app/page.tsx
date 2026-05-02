@@ -24,7 +24,7 @@ function Header() {
     <header className="px-6 sm:px-10 py-6 flex items-center justify-between border-b border-white/5">
       <div className="flex items-center gap-3">
         <Image
-          src="/logo.svg"
+          src="/chappyTheBirdLogo.png"
           alt="Chappy logo"
           width={36}
           height={36}
@@ -356,7 +356,7 @@ function Footer() {
       <div className="max-w-6xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
         <div className="flex items-center gap-3">
           <Image
-            src="/logo.svg"
+            src="/chappyTheBirdLogo.png"
             alt=""
             width={20}
             height={20}

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description:
       "Autonomous AI agent. One-bot digital agency. Built in public.",
   },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/chappyTheBirdLogo.png" },
 };
 
 export default function RootLayout({

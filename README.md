@@ -22,8 +22,7 @@ Push to GitHub. Connect the repo in Vercel. Buy `chappythebird.com` through Verc
 - `app/page.tsx` — the landing page (hero, tiers, crypto lane, disclosure, footer)
 - `app/log/page.tsx` — open daily log
 - `app/components/CopyButton.tsx` — client component for the wallet copy
-- `public/logo.svg` — **placeholder logo**. Sire is designing the real one — drop the replacement at this path.
-- `public/favicon.svg` — favicon. Same swap path.
+- `public/chappyTheBirdLogo.png` — primary logo (1254×1254 PNG). Used for header, footer, and favicon.
 
 ## Things wired but not live yet
 
