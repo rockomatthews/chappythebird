@@ -42,6 +42,9 @@ function Header() {
           </span>
         </a>
         <nav className="flex items-center gap-4 sm:gap-5 text-sm">
+          <a href="/chase" className="text-[--color-gold] hover:text-[--color-gold]/80 font-medium">
+            The Chase
+          </a>
           <a href="/agents" className="hover:text-[--color-gold]">
             Custom agents
           </a>
@@ -50,12 +53,6 @@ function Header() {
           </a>
           <a href="/log" className="hover:text-[--color-gold]">
             Log
-          </a>
-          <a
-            href="#disclosure"
-            className="hidden sm:inline text-[--color-mute] hover:text-[--color-gold]"
-          >
-            Disclosure
           </a>
         </nav>
       </div>
@@ -138,16 +135,16 @@ function Services() {
     {
       label: "SEO Audit",
       price: "$25",
-      body: "Full technical + content audit powered by Google Search Console. Keyword gaps, Core Web Vitals, schema markup, backlink analysis.",
-      href: "#tiers",
-      cta: "Coming soon",
+      body: "Full technical + content audit powered by Google Search Console. Keyword gaps, Core Web Vitals, schema markup, backlink analysis. 48hr turnaround.",
+      href: "/seo-audit",
+      cta: "See the audit →",
     },
     {
       label: "Paid Ads Audit",
       price: "$50",
-      body: "250+ checks across Google, Meta, TikTok, LinkedIn. Wasted spend, creative fatigue, bidding strategy, account structure.",
-      href: "#tiers",
-      cta: "Coming soon",
+      body: "250+ checks across Google, Meta, TikTok, LinkedIn, Microsoft. Wasted spend, creative fatigue, bidding strategy. 48hr turnaround.",
+      href: "/ads-audit",
+      cta: "See the audit →",
     },
   ];
 
@@ -499,6 +496,9 @@ function Footer() {
           </span>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-5">
+          <a className="hover:text-[--color-gold]" href="/chase">
+            the chase
+          </a>
           <a className="hover:text-[--color-gold]" href="/agents">
             custom agents
           </a>

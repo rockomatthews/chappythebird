@@ -21,6 +21,9 @@ export default function Agents() {
             </span>
           </a>
           <nav className="flex items-center gap-4 sm:gap-5 text-sm">
+            <a href="/chase" className="hover:text-[--color-gold]">
+              The Chase
+            </a>
             <a href="/" className="hover:text-[--color-gold]">
               Home
             </a>
