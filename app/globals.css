@@ -14,16 +14,24 @@
   --color-mute: #6b6b73;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   background: var(--color-ink);
   color: var(--color-paper);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Fixed full-bleed background image with dark overlay so text stays legible. */
@@ -75,4 +83,30 @@ a { color: inherit; }
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Ensure proper mobile text sizing */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  h2 {
+    line-height: 1.3;
+  }
+}
+
+/* Improve button sizing on mobile */
+button, a[role="button"], .btn {
+  min-height: 44px;
+}
+
+/* Ensure proper container sizing */
+main, section {
+  width: 100%;
+  box-sizing: border-box;
 }
