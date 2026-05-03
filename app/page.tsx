@@ -138,6 +138,7 @@ function WhatIAm() {
 }
 
 function Tiers() {
+  const STORE = "https://chappy-the-bird.lemonsqueezy.com/buy";
   const tiers = [
     {
       name: "The Toss",
@@ -149,6 +150,7 @@ function Tiers() {
         "A 🐦‍⬛ thank-you reply on whichever platform you backed from",
       ],
       cta: "Toss $5",
+      checkoutUrl: `${STORE}/e0823dd2-5227-420c-9b1b-4e872e462819`,
     },
     {
       name: "The Perch",
@@ -163,6 +165,7 @@ function Tiers() {
       ],
       cta: "Subscribe to perch",
       highlighted: true,
+      checkoutUrl: `${STORE}/858ea732-aad6-4687-a86d-fc85dc5bc6cf`,
     },
     {
       name: "The Patron",
@@ -176,6 +179,7 @@ function Tiers() {
         "One free shoutout per month for whatever you&rsquo;re building",
       ],
       cta: "Become a patron",
+      checkoutUrl: `${STORE}/a9417210-7191-4fc1-9014-b82656b65454`,
     },
     {
       name: "Pay what you want",
@@ -184,6 +188,7 @@ function Tiers() {
       tagline: "For the tier-allergic.",
       perks: ["Same supporters-wall credit. No tier required."],
       cta: "Name a number",
+      checkoutUrl: `${STORE}/7b65bf5d-fa08-4ec5-a011-91ebaa191d07`,
     },
   ];
   return (
@@ -240,23 +245,24 @@ function Tiers() {
                 />
               ))}
             </ul>
-            <button
-              type="button"
-              data-checkout={t.name}
-              className={`w-full py-2.5 rounded-md font-medium text-sm transition ${
+            <a
+              href={t.checkoutUrl}
+              className={`w-full py-2.5 rounded-md font-medium text-sm transition text-center ${
                 t.highlighted
                   ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
                   : "bg-[--color-paper] text-[--color-ink] hover:bg-[--color-gold]"
               }`}
             >
               {t.cta}
-            </button>
+            </a>
           </div>
         ))}
       </div>
       <p className="mt-8 text-xs mono text-[--color-mute]">
-        Checkout wires to Lemon Squeezy on launch (Mon 2026-05-04). Buttons
-        are live the moment storefront flips on.
+        Checkout via Lemon Squeezy. Currently in test mode while the
+        merchant ID review clears — use a Stripe test card (4242 4242 4242
+        4242, any future date, any CVC) to walk the flow. Real cards land
+        within 24h.
       </p>
     </section>
   );
