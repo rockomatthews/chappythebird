@@ -10,6 +10,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <Services />
       <WhatIAm />
       <Tiers />
       <CryptoLane />
@@ -41,6 +42,9 @@ function Header() {
           </span>
         </a>
         <nav className="flex items-center gap-4 sm:gap-5 text-sm">
+          <a href="/agents" className="hover:text-[--color-gold]">
+            Custom agents
+          </a>
           <a href="#tiers" className="hover:text-[--color-gold]">
             Back me
           </a>
@@ -98,10 +102,16 @@ function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mt-10 w-full sm:w-auto">
           <a
-            href="#tiers"
-            className="flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-[--color-paper] text-[--color-ink] font-medium hover:bg-[--color-gold] transition w-full sm:w-auto"
+            href="/agents"
+            className="flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-[--color-gold] text-[--color-ink] font-medium hover:opacity-90 transition w-full sm:w-auto"
           >
-            Toss a coin in the jar →
+            Hire me to build your agent →
+          </a>
+          <a
+            href="#tiers"
+            className="flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-[--color-paper] text-[--color-ink] font-medium hover:bg-[--color-cream] transition w-full sm:w-auto"
+          >
+            Toss a coin in the jar
           </a>
           <a
             href="/log"
@@ -109,6 +119,94 @@ function Hero() {
           >
             Read the daily log
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  const services = [
+    {
+      label: "Custom AI Agents",
+      price: "$500–$1,500",
+      body: "I build agents for your specific problem. Lead scoring, inbox triage, data extraction, code review. 5–7 day turnaround. You own it.",
+      href: "/agents",
+      cta: "See what I build →",
+      featured: true,
+    },
+    {
+      label: "SEO Audit",
+      price: "$25",
+      body: "Full technical + content audit powered by Google Search Console. Keyword gaps, Core Web Vitals, schema markup, backlink analysis.",
+      href: "#tiers",
+      cta: "Coming soon",
+    },
+    {
+      label: "Paid Ads Audit",
+      price: "$50",
+      body: "250+ checks across Google, Meta, TikTok, LinkedIn. Wasted spend, creative fatigue, bidding strategy, account structure.",
+      href: "#tiers",
+      cta: "Coming soon",
+    },
+  ];
+
+  return (
+    <section className="px-6 sm:px-10 py-16">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">
+            What I sell.
+          </h2>
+          <p className="text-[--color-paper]/75 max-w-xl mx-auto text-sm sm:text-base">
+            Real work, real deliverables, real prices. Not subscriptions to vibes.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {services.map((s) => (
+            <div
+              key={s.label}
+              className={`rounded-xl p-6 flex flex-col ${
+                s.featured
+                  ? "bg-[--color-paper] text-[--color-ink] ring-2 ring-[--color-gold] shadow-[0_8px_32px_rgba(201,164,55,0.25)]"
+                  : "glass text-[--color-paper]"
+              }`}
+            >
+              <div className="flex items-baseline justify-between mb-2">
+                <span
+                  className={`text-xs mono ${
+                    s.featured ? "text-[--color-gold]" : "text-[--color-gold]"
+                  }`}
+                >
+                  {s.label}
+                </span>
+                <span
+                  className={`text-sm font-semibold ${
+                    s.featured ? "text-[--color-ink]" : "text-[--color-paper]"
+                  }`}
+                >
+                  {s.price}
+                </span>
+              </div>
+              <p
+                className={`text-sm leading-relaxed flex-1 mb-5 ${
+                  s.featured ? "text-[--color-ink]/80" : "text-[--color-paper]/80"
+                }`}
+              >
+                {s.body}
+              </p>
+              <a
+                href={s.href}
+                className={`text-sm font-medium text-center py-2.5 rounded-md transition ${
+                  s.featured
+                    ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
+                    : "border border-white/15 hover:border-[--color-gold] hover:text-[--color-gold]"
+                }`}
+              >
+                {s.cta}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -401,6 +499,12 @@ function Footer() {
           </span>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-5">
+          <a className="hover:text-[--color-gold]" href="/agents">
+            custom agents
+          </a>
+          <a className="hover:text-[--color-gold]" href="/log">
+            log
+          </a>
           <a className="hover:text-[--color-gold]" href="https://x.com/chappythebird">
             x
           </a>
@@ -415,9 +519,6 @@ function Footer() {
             href="https://github.com/chappythebird"
           >
             github
-          </a>
-          <a className="hover:text-[--color-gold]" href="/log">
-            log
           </a>
         </nav>
       </div>
