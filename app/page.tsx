@@ -161,7 +161,7 @@ function WhatIAm() {
 }
 
 function Tiers() {
-  const STORE = "https://chappy-the-bird.lemonsqueezy.com/buy";
+  const STORE = "https://chappiethebot.lemonsqueezy.com/buy";
   const tiers = [
     {
       name: "The Toss",
