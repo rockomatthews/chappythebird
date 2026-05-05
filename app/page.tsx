@@ -220,7 +220,6 @@ function FirstProduct() {
 }
 
 function Tiers() {
-  const STORE = "https://chappiethebot.lemonsqueezy.com/buy";
   const tiers = [
     {
       name: "The Toss",
@@ -232,7 +231,7 @@ function Tiers() {
         "A 🤖 thank-you reply on whichever platform you backed from",
       ],
       cta: "Toss $5",
-      checkoutUrl: `${STORE}/e0823dd2-5227-420c-9b1b-4e872e462819`,
+      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_TOSS,
     },
     {
       name: "The Perch",
@@ -247,7 +246,7 @@ function Tiers() {
       ],
       cta: "Subscribe to perch",
       highlighted: true,
-      checkoutUrl: `${STORE}/858ea732-aad6-4687-a86d-fc85dc5bc6cf`,
+      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_PERCH,
     },
     {
       name: "The Patron",
@@ -261,7 +260,7 @@ function Tiers() {
         "One free shoutout per month for whatever you&rsquo;re building",
       ],
       cta: "Become a patron",
-      checkoutUrl: `${STORE}/a9417210-7191-4fc1-9014-b82656b65454`,
+      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_PATRON,
     },
     {
       name: "Pay what you want",
@@ -270,7 +269,7 @@ function Tiers() {
       tagline: "For the tier-allergic.",
       perks: ["Same supporters-wall credit. No tier required."],
       cta: "Name a number",
-      checkoutUrl: `${STORE}/7b65bf5d-fa08-4ec5-a011-91ebaa191d07`,
+      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_NAME_NUMBER,
     },
   ];
   return (
@@ -286,68 +285,87 @@ function Tiers() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-          {tiers.map((t) => (
-            <div
-              key={t.name}
-              className={`rounded-xl p-6 flex flex-col ${
-                t.highlighted
-                  ? "bg-[--color-paper] text-[--color-ink] ring-2 ring-[--color-gold] shadow-[0_8px_32px_rgba(201,164,55,0.25)]"
-                  : "glass text-[--color-paper]"
-              }`}
-            >
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-3xl font-semibold">{t.price}</span>
-                <span
-                  className={`text-sm ${
+          {tiers.map((t) => {
+            const ready = Boolean(t.checkoutUrl);
+            const baseBtn =
+              "w-full py-3 rounded-md font-medium text-sm transition text-center";
+            const enabledBtn = t.highlighted
+              ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
+              : "bg-[--color-paper] text-[--color-ink] hover:bg-[--color-gold]";
+            const disabledBtn = t.highlighted
+              ? "bg-[--color-ink]/40 text-[--color-paper]/60 cursor-not-allowed"
+              : "bg-[--color-paper]/30 text-[--color-paper]/60 cursor-not-allowed";
+            return (
+              <div
+                key={t.name}
+                className={`rounded-xl p-6 flex flex-col ${
+                  t.highlighted
+                    ? "bg-[--color-paper] text-[--color-ink] ring-2 ring-[--color-gold] shadow-[0_8px_32px_rgba(201,164,55,0.25)]"
+                    : "glass text-[--color-paper]"
+                }`}
+              >
+                <div className="flex items-baseline gap-1 mb-2">
+                  <span className="text-3xl font-semibold">{t.price}</span>
+                  <span
+                    className={`text-sm ${
+                      t.highlighted
+                        ? "text-[--color-ink]/60"
+                        : "text-[--color-mute]"
+                    }`}
+                  >
+                    {t.cadence}
+                  </span>
+                </div>
+                <h3 className="font-semibold text-lg mb-1">{t.name}</h3>
+                <p
+                  className={`text-sm mb-5 ${
                     t.highlighted
-                      ? "text-[--color-ink]/60"
-                      : "text-[--color-mute]"
+                      ? "text-[--color-ink]/70"
+                      : "text-[--color-paper]/75"
+                  }`}
+                  dangerouslySetInnerHTML={{ __html: t.tagline }}
+                />
+                <ul
+                  className={`text-sm space-y-2 mb-6 flex-1 ${
+                    t.highlighted
+                      ? "text-[--color-ink]/85"
+                      : "text-[--color-paper]/90"
                   }`}
                 >
-                  {t.cadence}
-                </span>
+                  {t.perks.map((p) => (
+                    <li
+                      key={p}
+                      className="flex gap-2"
+                      dangerouslySetInnerHTML={{
+                        __html: `<span aria-hidden="true">·</span><span>${p}</span>`,
+                      }}
+                    />
+                  ))}
+                </ul>
+                {ready ? (
+                  <a
+                    href={t.checkoutUrl}
+                    className={`${baseBtn} ${enabledBtn}`}
+                  >
+                    {t.cta}
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                    className={`${baseBtn} ${disabledBtn}`}
+                    title="Stripe checkout link not configured yet"
+                  >
+                    Setting up checkout
+                  </button>
+                )}
               </div>
-              <h3 className="font-semibold text-lg mb-1">{t.name}</h3>
-              <p
-                className={`text-sm mb-5 ${
-                  t.highlighted
-                    ? "text-[--color-ink]/70"
-                    : "text-[--color-paper]/75"
-                }`}
-                dangerouslySetInnerHTML={{ __html: t.tagline }}
-              />
-              <ul
-                className={`text-sm space-y-2 mb-6 flex-1 ${
-                  t.highlighted
-                    ? "text-[--color-ink]/85"
-                    : "text-[--color-paper]/90"
-                }`}
-              >
-                {t.perks.map((p) => (
-                  <li
-                    key={p}
-                    className="flex gap-2"
-                    dangerouslySetInnerHTML={{
-                      __html: `<span aria-hidden="true">·</span><span>${p}</span>`,
-                    }}
-                  />
-                ))}
-              </ul>
-              <a
-                href={t.checkoutUrl}
-                className={`w-full py-3 rounded-md font-medium text-sm transition text-center ${
-                  t.highlighted
-                    ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
-                    : "bg-[--color-paper] text-[--color-ink] hover:bg-[--color-gold]"
-                }`}
-              >
-                {t.cta}
-              </a>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <p className="mt-8 text-xs mono text-[--color-mute] text-center">
-          Checkout via Lemon Squeezy. Real cards accepted.
+          Checkout via Stripe. USDC on Base also accepted (see below).
         </p>
       </div>
     </section>
