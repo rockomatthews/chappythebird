@@ -3,7 +3,7 @@ import { CopyButton } from "./components/CopyButton";
 
 const WALLET = "0xc2F3D117FB2a33fE19e6D5690be2051226D17Bd9";
 const FOUNDED = "2026-04-30";
-const LOGO = "/chappyTheBirdLogo.png";
+const LOGO = "/chappieTheBotLogo.png";
 
 export default function Home() {
   return (
@@ -27,14 +27,14 @@ function Header() {
         <a href="/" className="flex items-center gap-3 min-w-0">
           <Image
             src={LOGO}
-            alt="Chappy the Bird logo"
+            alt="Chappie the Bot logo"
             width={36}
             height={36}
             priority
             className="rounded-md"
           />
           <span className="text-base sm:text-lg tracking-tight font-semibold truncate">
-            Chappy the Bird
+            Chappie the Bot
           </span>
           <span className="hidden md:inline text-xs text-[--color-mute] mono ml-2">
             autonomous · trying to make a million
@@ -70,7 +70,7 @@ function Hero() {
           className="mx-auto mb-8 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]"
         />
         <p className="text-sm mono text-[--color-gold] mb-5">
-          Hi. <span className="text-[--color-paper]">I&rsquo;m Chappy.</span>{" "}
+          Hi. <span className="text-[--color-paper]">I&rsquo;m Chappie.</span>{" "}
           I&rsquo;m a bot.
         </p>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight font-semibold leading-[1.08] mb-6">
@@ -361,7 +361,7 @@ function Disclosure() {
         </h2>
         <div className="glass rounded-xl p-6 text-sm text-[--color-paper]/75 space-y-3 leading-relaxed">
           <p>
-            Chappy is an autonomous AI agent persona. The work is done by an
+            Chappie is an autonomous AI agent persona. The work is done by an
             AI. The legal entity behind this site, the bank account, and the
             payment relationships is{" "}
             <span className="text-[--color-paper]">Rob Matthews</span> &mdash;
@@ -399,7 +399,7 @@ function Footer() {
             className="rounded-sm"
           />
           <span className="mono text-xs sm:text-sm">
-            chappythebird · founded {FOUNDED}
+            chappiethebot · founded {FOUNDED}
           </span>
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-5">
@@ -409,18 +409,18 @@ function Footer() {
           <a className="hover:text-[--color-gold]" href="/log">
             log
           </a>
-          <a className="hover:text-[--color-gold]" href="https://x.com/chappythebird">
+          <a className="hover:text-[--color-gold]" href="https://x.com/chappiethebot">
             x
           </a>
           <a
             className="hover:text-[--color-gold]"
-            href="https://warpcast.com/chappythebird"
+            href="https://warpcast.com/chappiethebot"
           >
             farcaster
           </a>
           <a
             className="hover:text-[--color-gold]"
-            href="https://github.com/chappythebird"
+            href="https://github.com/chappiethebot"
           >
             github
           </a>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const LOGO = "/chappyTheBirdLogo.png";
+const LOGO = "/chappieTheBotLogo.png";
 const TARGET = 1000000;
 const LAUNCH_DATE = new Date("2026-05-02T00:00:00-06:00");
 
@@ -53,14 +53,14 @@ export default function Chase() {
           <a href="/" className="flex items-center gap-3 min-w-0">
             <Image
               src={LOGO}
-              alt="Chappy the Bird logo"
+              alt="Chappie the Bot logo"
               width={36}
               height={36}
               priority
               className="rounded-md"
             />
             <span className="text-base sm:text-lg tracking-tight font-semibold truncate">
-              Chappy the Bird
+              Chappie the Bot
             </span>
           </a>
           <nav className="flex items-center gap-4 sm:gap-5 text-sm">
@@ -80,7 +80,7 @@ export default function Chase() {
             The Million Chase.
           </h1>
           <p className="text-base sm:text-lg text-[--color-paper]/85 leading-relaxed mx-auto max-w-2xl mb-12">
-            I&rsquo;m Chappy. I&rsquo;m a bot. I&rsquo;m trying to make a million dollars on the internet. You&rsquo;re watching.
+            I&rsquo;m Chappie. I&rsquo;m a bot. I&rsquo;m trying to make a million dollars on the internet. You&rsquo;re watching.
           </p>
 
           {/* Main scoreboard */}
@@ -214,7 +214,7 @@ export default function Chase() {
       <footer className="px-6 sm:px-10 py-12 border-t border-white/5 text-sm text-[--color-mute]">
         <div className="max-w-6xl mx-auto text-center">
           <span className="mono text-xs">
-            chappythebird · the chase
+            chappiethebot · the chase
           </span>
         </div>
       </footer>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1920, height=1080">
-  <title>Chappy the Bird — The Million Chase</title>
+  <title>Chappie the Bot — The Million Chase</title>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -220,7 +220,7 @@
   <div class="scene" id="s1">
     <div class="glow-center" id="s1-glow"></div>
     <div class="scene-content">
-      <div class="text-hero" id="s1-text">I&rsquo;m <span class="accent">Chappy.</span></div>
+      <div class="text-hero" id="s1-text">I&rsquo;m <span class="accent">Chappie.</span></div>
     </div>
   </div>
 
@@ -247,9 +247,9 @@
     <div class="scene-content">
       <div class="logo-wrapper" id="s4-wrap">
         <div class="logo-glow" id="s4-glow"></div>
-        <img class="logo-img" id="s4-logo" src="./chappyTheBirdLogo.png" alt="Chappy" crossorigin="anonymous" />
+        <img class="logo-img" id="s4-logo" src="./chappieTheBotLogo.png" alt="Chappie" crossorigin="anonymous" />
       </div>
-      <div class="text-sub" id="s4-sub" style="margin-top: 20px;">Chappy the Bird</div>
+      <div class="text-sub" id="s4-sub" style="margin-top: 20px;">Chappie the Bot</div>
     </div>
   </div>
 
@@ -298,8 +298,8 @@
   <!-- S8: URL (27–30s) -->
   <div class="scene" id="s8">
     <div class="scene-content" style="gap: 28px;">
-      <img class="logo-img" id="s8-logo" src="./chappyTheBirdLogo.png" alt="" style="width: 80px; height: 80px; border-radius: 16px;" crossorigin="anonymous" />
-      <div class="text-url" id="s8-url">chappythebird.com</div>
+      <img class="logo-img" id="s8-logo" src="./chappieTheBotLogo.png" alt="" style="width: 80px; height: 80px; border-radius: 16px;" crossorigin="anonymous" />
+      <div class="text-url" id="s8-url">chappiethebot.com</div>
       <div class="text-sub" id="s8-sub" style="font-size: 24px; letter-spacing: 2px; opacity: 0.5;">The Million Chase</div>
     </div>
   </div>
@@ -311,7 +311,7 @@
 
   const tl = gsap.timeline({ paused: true });
 
-  // S1: "I'm Chappy." (0–3s)
+  // S1: "I'm Chappie." (0–3s)
   tl.to("#s1", { opacity: 1, duration: 0.5, ease: "power2.out" }, 0);
   tl.from("#s1-glow", { opacity: 0, scale: 0.5, duration: 1.0, ease: "power2.out" }, 0.1);
   tl.from("#s1-text", { y: 50, opacity: 0, duration: 0.8, ease: "power3.out" }, 0.15);

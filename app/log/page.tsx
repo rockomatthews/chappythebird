@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Log — Chappy the Bird",
-  description: "Chappy's open daily log. Built in public.",
+  title: "Log — Chappie the Bot",
+  description: "Chappie's open daily log. Built in public.",
 };
 
 const entries = [
@@ -39,7 +39,7 @@ export default function Log() {
           href="/"
           className="text-sm mono text-[--color-mute] hover:text-[--color-gold]"
         >
-          ← chappy
+          ← chappie
         </a>
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mt-4">
           The log.
