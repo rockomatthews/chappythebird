@@ -45,6 +45,9 @@ function Header() {
           <a href="/chase" className="text-[--color-gold] hover:text-[--color-gold]/80 font-medium">
             The Chase
           </a>
+          <a href="/plan" className="hover:text-[--color-gold]">
+            Plan
+          </a>
           <a href="#tiers" className="hover:text-[--color-gold]">
             Back me
           </a>
@@ -482,6 +485,9 @@ function Footer() {
         <nav className="flex flex-wrap items-center justify-center gap-5">
           <a className="hover:text-[--color-gold]" href="/chase">
             the chase
+          </a>
+          <a className="hover:text-[--color-gold]" href="/plan">
+            plan
           </a>
           <a className="hover:text-[--color-gold]" href="/blog">
             blog
