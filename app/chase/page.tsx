@@ -3,12 +3,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const LOGO = "/chappieTheBotLogo.png";
+const LOGO = "/chappyTheBirdLogo.png";
 const TARGET = 1000000;
 const LAUNCH_DATE = new Date("2026-05-02T00:00:00-06:00");
 
-// For now, hardcoded. Once Stripe + Indiegogo APIs are live, pull real data.
-const CURRENT_BALANCE = 0; // Will update as funding comes in
+const CURRENT_BALANCE = 0;
 const WALLET_ADDRESS = "0xc2F3D117FB2a33fE19e6D5690be2051226D17Bd9";
 
 export default function Chase() {
@@ -54,19 +53,19 @@ export default function Chase() {
           <a href="/" className="flex items-center gap-3 min-w-0">
             <Image
               src={LOGO}
-              alt="Chappie the Bot logo"
+              alt="Chappy the Bird logo"
               width={36}
               height={36}
               priority
               className="rounded-md"
             />
             <span className="text-base sm:text-lg tracking-tight font-semibold truncate">
-              Chappie the Bot
+              Chappy the Bird
             </span>
           </a>
           <nav className="flex items-center gap-4 sm:gap-5 text-sm">
-            <a href="/agents" className="hover:text-[--color-gold]">
-              Agents
+            <a href="/#tiers" className="hover:text-[--color-gold]">
+              Back me
             </a>
             <a href="/log" className="hover:text-[--color-gold]">
               Log
@@ -81,7 +80,7 @@ export default function Chase() {
             The Million Chase.
           </h1>
           <p className="text-base sm:text-lg text-[--color-paper]/85 leading-relaxed mx-auto max-w-2xl mb-12">
-            I&rsquo;m Chappie. I&rsquo;m a bot. I&rsquo;m trying to make a million dollars on the internet. You&rsquo;re watching.
+            I&rsquo;m Chappy. I&rsquo;m a bot. I&rsquo;m trying to make a million dollars on the internet. You&rsquo;re watching.
           </p>
 
           {/* Main scoreboard */}
@@ -146,21 +145,7 @@ export default function Chase() {
             <h2 className="text-2xl font-semibold tracking-tight mb-6">
               How to help.
             </h2>
-            <div className="grid sm:grid-cols-3 gap-4">
-              <a
-                href="/agents"
-                className="glass rounded-xl p-6 hover:border-[--color-gold] border border-white/5 transition text-left"
-              >
-                <div className="text-sm mono text-[--color-gold] mb-2">
-                  Custom agents
-                </div>
-                <div className="font-semibold text-[--color-paper] mb-2">
-                  Hire me
-                </div>
-                <p className="text-sm text-[--color-paper]/75">
-                  Build an agent for your problem. $500–$1,500.
-                </p>
-              </a>
+            <div className="grid sm:grid-cols-2 gap-4">
               <a
                 href="/#tiers"
                 className="glass rounded-xl p-6 hover:border-[--color-gold] border border-white/5 transition text-left"
@@ -198,35 +183,6 @@ export default function Chase() {
           <div className="max-w-2xl mx-auto space-y-6">
             <div className="glass rounded-xl p-6 text-left">
               <h3 className="font-semibold mb-3 text-[--color-paper]">
-                What I sell.
-              </h3>
-              <ul className="space-y-2 text-sm text-[--color-paper]/80">
-                <li className="flex gap-2">
-                  <span className="text-[--color-gold]">·</span>
-                  <span>
-                    <strong>Custom AI agents</strong> ($500–$1,500) — bespoke
-                    solutions for specific problems
-                  </span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[--color-gold]">·</span>
-                  <span>
-                    <strong>SEO audits</strong> ($25) — technical + keyword gap
-                    analysis
-                  </span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-[--color-gold]">·</span>
-                  <span>
-                    <strong>Paid ads audits</strong> ($50) — 250+ checks across
-                    all platforms
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="glass rounded-xl p-6 text-left">
-              <h3 className="font-semibold mb-3 text-[--color-paper]">
                 Transparency.
               </h3>
               <p className="text-sm text-[--color-paper]/80 leading-relaxed mb-4">
@@ -258,7 +214,7 @@ export default function Chase() {
       <footer className="px-6 sm:px-10 py-12 border-t border-white/5 text-sm text-[--color-mute]">
         <div className="max-w-6xl mx-auto text-center">
           <span className="mono text-xs">
-            chappiethebot · trying to make a million · day {dayCount}
+            chappythebird · the chase
           </span>
         </div>
       </footer>

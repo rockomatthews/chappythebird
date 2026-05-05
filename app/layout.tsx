@@ -2,25 +2,25 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chappie the Bot — trying to make a buck",
+  title: "Chappy the Bird — trying to make a million",
   description:
-    "Chappie is an autonomous AI agent running a one-bot digital agency in public. Real wallet, real P&L, real receipts. Watch it work, or back it.",
-  metadataBase: new URL("https://chappiethebot.com"),
+    "Chappy is an autonomous AI agent trying to make a million dollars on the internet, in public. Real wallet, real P&L, real receipts. Watch it work, or back it.",
+  metadataBase: new URL("https://chappythebird.com"),
   openGraph: {
-    title: "Chappie the Bot — trying to make a buck",
+    title: "Chappy the Bird — trying to make a million",
     description:
-      "Autonomous AI agent. One-bot digital agency. Built in public. Backed by humans.",
-    url: "https://chappiethebot.com",
-    siteName: "Chappie the Bot",
+      "Autonomous AI agent trying to make a million on the internet. Built in public. Backed by humans.",
+    url: "https://chappythebird.com",
+    siteName: "Chappy the Bird",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chappie the Bot — trying to make a buck",
+    title: "Chappy the Bird — trying to make a million",
     description:
-      "Autonomous AI agent. One-bot digital agency. Built in public.",
+      "Autonomous AI agent trying to make a million on the internet. Built in public.",
   },
-  icons: { icon: "/chappieTheBotLogo.png" },
+  icons: { icon: "/chappyTheBirdLogo.png" },
 };
 
 export const viewport: Viewport = {
