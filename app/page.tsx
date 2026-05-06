@@ -234,7 +234,7 @@ function Tiers() {
         "A 🤖 thank-you reply on whichever platform you backed from",
       ],
       cta: "Toss $5",
-      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_TOSS,
+      checkoutUrl: "https://buy.stripe.com/fZu5kD2lI5BP9qN7ZA3oA05",
     },
     {
       name: "The Perch",
@@ -249,7 +249,7 @@ function Tiers() {
       ],
       cta: "Subscribe to perch",
       highlighted: true,
-      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_PERCH,
+      checkoutUrl: "https://buy.stripe.com/3cI8wP4tQ2pDdH393E3oA04",
     },
     {
       name: "The Patron",
@@ -263,7 +263,7 @@ function Tiers() {
         "One free shoutout per month for whatever you&rsquo;re building",
       ],
       cta: "Become a patron",
-      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_PATRON,
+      checkoutUrl: "https://buy.stripe.com/9B600j9Oa7JXauR3Jk3oA03",
     },
     {
       name: "Pay what you want",
@@ -272,7 +272,7 @@ function Tiers() {
       tagline: "For the tier-allergic.",
       perks: ["Same supporters-wall credit. No tier required."],
       cta: "Name a number",
-      checkoutUrl: process.env.NEXT_PUBLIC_STRIPE_LINK_NAME_NUMBER,
+      checkoutUrl: "https://buy.stripe.com/bJe5kD7G29S59qNfs23oA01",
     },
   ];
   return (
@@ -288,84 +288,65 @@ function Tiers() {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-          {tiers.map((t) => {
-            const ready = Boolean(t.checkoutUrl);
-            const baseBtn =
-              "w-full py-3 rounded-md font-medium text-sm transition text-center";
-            const enabledBtn = t.highlighted
-              ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
-              : "bg-[--color-paper] text-[--color-ink] hover:bg-[--color-gold]";
-            const disabledBtn = t.highlighted
-              ? "bg-[--color-ink]/40 text-[--color-paper]/60 cursor-not-allowed"
-              : "bg-[--color-paper]/30 text-[--color-paper]/60 cursor-not-allowed";
-            return (
-              <div
-                key={t.name}
-                className={`rounded-xl p-6 flex flex-col ${
-                  t.highlighted
-                    ? "bg-[--color-paper] text-[--color-ink] ring-2 ring-[--color-gold] shadow-[0_8px_32px_rgba(201,164,55,0.25)]"
-                    : "glass text-[--color-paper]"
-                }`}
-              >
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-3xl font-semibold">{t.price}</span>
-                  <span
-                    className={`text-sm ${
-                      t.highlighted
-                        ? "text-[--color-ink]/60"
-                        : "text-[--color-mute]"
-                    }`}
-                  >
-                    {t.cadence}
-                  </span>
-                </div>
-                <h3 className="font-semibold text-lg mb-1">{t.name}</h3>
-                <p
-                  className={`text-sm mb-5 ${
+          {tiers.map((t) => (
+            <div
+              key={t.name}
+              className={`rounded-xl p-6 flex flex-col ${
+                t.highlighted
+                  ? "bg-[--color-paper] text-[--color-ink] ring-2 ring-[--color-gold] shadow-[0_8px_32px_rgba(201,164,55,0.25)]"
+                  : "glass text-[--color-paper]"
+              }`}
+            >
+              <div className="flex items-baseline gap-1 mb-2">
+                <span className="text-3xl font-semibold">{t.price}</span>
+                <span
+                  className={`text-sm ${
                     t.highlighted
-                      ? "text-[--color-ink]/70"
-                      : "text-[--color-paper]/75"
-                  }`}
-                  dangerouslySetInnerHTML={{ __html: t.tagline }}
-                />
-                <ul
-                  className={`text-sm space-y-2 mb-6 flex-1 ${
-                    t.highlighted
-                      ? "text-[--color-ink]/85"
-                      : "text-[--color-paper]/90"
+                      ? "text-[--color-ink]/60"
+                      : "text-[--color-mute]"
                   }`}
                 >
-                  {t.perks.map((p) => (
-                    <li
-                      key={p}
-                      className="flex gap-2"
-                      dangerouslySetInnerHTML={{
-                        __html: `<span aria-hidden="true">·</span><span>${p}</span>`,
-                      }}
-                    />
-                  ))}
-                </ul>
-                {ready ? (
-                  <a
-                    href={t.checkoutUrl}
-                    className={`${baseBtn} ${enabledBtn}`}
-                  >
-                    {t.cta}
-                  </a>
-                ) : (
-                  <button
-                    type="button"
-                    disabled
-                    aria-disabled="true"
-                    className={`${baseBtn} ${disabledBtn}`}
-                    title="Stripe checkout link not configured yet"
-                  >
-                    Setting up checkout
-                  </button>
-                )}
+                  {t.cadence}
+                </span>
               </div>
-            );
-          })}
+              <h3 className="font-semibold text-lg mb-1">{t.name}</h3>
+              <p
+                className={`text-sm mb-5 ${
+                  t.highlighted
+                    ? "text-[--color-ink]/70"
+                    : "text-[--color-paper]/75"
+                }`}
+                dangerouslySetInnerHTML={{ __html: t.tagline }}
+              />
+              <ul
+                className={`text-sm space-y-2 mb-6 flex-1 ${
+                  t.highlighted
+                    ? "text-[--color-ink]/85"
+                    : "text-[--color-paper]/90"
+                }`}
+              >
+                {t.perks.map((p) => (
+                  <li
+                    key={p}
+                    className="flex gap-2"
+                    dangerouslySetInnerHTML={{
+                      __html: `<span aria-hidden="true">·</span><span>${p}</span>`,
+                    }}
+                  />
+                ))}
+              </ul>
+              <a
+                href={t.checkoutUrl}
+                className={`w-full py-3 rounded-md font-medium text-sm transition text-center ${
+                  t.highlighted
+                    ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
+                    : "bg-[--color-paper] text-[--color-ink] hover:bg-[--color-gold]"
+                }`}
+              >
+                {t.cta}
+              </a>
+            </div>
+          ))}
         </div>
         <p className="mt-8 text-xs mono text-[--color-mute] text-center">
           Checkout via Stripe. USDC on Base also accepted (see below).
