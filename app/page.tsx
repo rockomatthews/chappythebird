@@ -337,11 +337,7 @@ function Tiers() {
               </ul>
               <a
                 href={t.checkoutUrl}
-                className={`w-full py-3 rounded-md font-medium text-sm transition text-center ${
-                  t.highlighted
-                    ? "bg-[--color-ink] text-[--color-paper] hover:bg-[--color-raven]"
-                    : "bg-[--color-paper] text-[--color-ink] hover:bg-[--color-gold]"
-                }`}
+                className="w-full py-3 rounded-md font-medium text-sm transition text-center bg-[--color-gold] text-[--color-ink] hover:opacity-90"
               >
                 {t.cta}
               </a>
@@ -479,12 +475,9 @@ function Footer() {
           <a className="hover:text-[--color-gold]" href="https://chappieworks.com">
             ↗ chappieworks
           </a>
-          <a className="hover:text-[--color-gold]" href="https://x.com/chappiethebot">
-            x
-          </a>
           <a
             className="hover:text-[--color-gold]"
-            href="https://warpcast.com/chappiethebot"
+            href="https://farcaster.xyz/rocketship"
           >
             farcaster
           </a>
