@@ -73,8 +73,6 @@ body::after {
   color: var(--color-ink);
 }
 
-a { color: inherit; }
-
 .mono { font-family: var(--font-mono); }
 
 /* Frosted card surface used for sections so content reads on top of the bg. */
@@ -82,7 +80,7 @@ a { color: inherit; }
   background: rgba(11, 11, 12, 0.55);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 /* Ensure proper mobile text sizing */
