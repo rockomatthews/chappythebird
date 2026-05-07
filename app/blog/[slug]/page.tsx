@@ -44,8 +44,8 @@ export default async function BlogPost({
     : undefined;
   const accentClass =
     persona?.accent === "rust"
-      ? "text-[--color-rust]"
-      : "text-[--color-gold]";
+      ? "text-[var(--color-rust)]"
+      : "text-[var(--color-gold)]";
 
   const otherMeetPosts = POSTS.filter(
     (p) => p.tag === "meet" && p.slug !== post.slug
@@ -56,12 +56,12 @@ export default async function BlogPost({
       <header className="mb-10">
         <Link
           href="/blog"
-          className="text-sm mono text-[--color-mute] hover:text-[--color-gold]"
+          className="text-sm mono text-[var(--color-mute)] hover:text-[var(--color-gold)]"
         >
           ← blog
         </Link>
         <div className="flex items-baseline gap-3 mt-6 mb-3">
-          <span className="text-xs mono text-[--color-gold]">{post.date}</span>
+          <span className="text-xs mono text-[var(--color-gold)]">{post.date}</span>
           {persona && (
             <span className={`text-xs mono ${accentClass}`}>
               · {persona.role}
@@ -71,7 +71,7 @@ export default async function BlogPost({
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15] mb-4">
           {post.title}
         </h1>
-        <p className="text-[--color-paper]/80 text-lg leading-relaxed">
+        <p className="text-[var(--color-paper)]/80 text-lg leading-relaxed">
           {post.dek}
         </p>
       </header>
@@ -82,29 +82,29 @@ export default async function BlogPost({
             <h2 className={`text-xl font-semibold ${accentClass}`}>
               {persona.name}
             </h2>
-            <span className="text-xs mono text-[--color-mute]">
+            <span className="text-xs mono text-[var(--color-mute)]">
               {persona.role}
             </span>
           </div>
-          <p className="text-sm text-[--color-paper] font-medium mb-2">
+          <p className="text-sm text-[var(--color-paper)] font-medium mb-2">
             {persona.tagline}
           </p>
           <blockquote
-            className={`border-l-2 pl-4 italic text-[--color-paper]/90 my-3 ${
+            className={`border-l-2 pl-4 italic text-[var(--color-paper)]/90 my-3 ${
               persona.accent === "rust"
-                ? "border-[--color-rust]"
-                : "border-[--color-gold]"
+                ? "border-[var(--color-rust)]"
+                : "border-[var(--color-gold)]"
             }`}
           >
             &ldquo;{persona.quote}&rdquo;
           </blockquote>
-          <p className="text-xs mono text-[--color-mute]">
+          <p className="text-xs mono text-[var(--color-mute)]">
             <span className={accentClass}>Owns:</span> {persona.owns}
           </p>
         </aside>
       )}
 
-      <article className="space-y-5 text-[--color-paper]/90 leading-relaxed text-base sm:text-lg">
+      <article className="space-y-5 text-[var(--color-paper)]/90 leading-relaxed text-base sm:text-lg">
         {post.body.map((para, i) => (
           <p key={i}>{para}</p>
         ))}
@@ -112,7 +112,7 @@ export default async function BlogPost({
 
       {otherMeetPosts.length > 0 && (
         <section className="mt-16 pt-10 border-t border-white/5">
-          <h2 className="text-sm mono text-[--color-gold] uppercase tracking-widest mb-5">
+          <h2 className="text-sm mono text-[var(--color-gold)] uppercase tracking-widest mb-5">
             Meet the rest of the studio
           </h2>
           <ul className="space-y-4">
@@ -122,10 +122,10 @@ export default async function BlogPost({
                   href={`/blog/${p.slug}`}
                   className="group block glass rounded-xl p-4"
                 >
-                  <h3 className="font-semibold group-hover:text-[--color-gold] transition mb-1">
+                  <h3 className="font-semibold group-hover:text-[var(--color-gold)] transition mb-1">
                     {p.title}
                   </h3>
-                  <p className="text-sm text-[--color-paper]/75 leading-relaxed">
+                  <p className="text-sm text-[var(--color-paper)]/75 leading-relaxed">
                     {p.dek}
                   </p>
                 </Link>
@@ -135,17 +135,17 @@ export default async function BlogPost({
         </section>
       )}
 
-      <section className="mt-12 glass rounded-xl p-6 text-sm text-[--color-paper]/80 leading-relaxed">
+      <section className="mt-12 glass rounded-xl p-6 text-sm text-[var(--color-paper)]/80 leading-relaxed">
         <p>
           The studio sells custom AI agents and free audits at{" "}
           <a
             href="https://chappieworks.com"
-            className="text-[--color-gold] hover:underline"
+            className="text-[var(--color-gold)] hover:underline"
           >
             chappieworks.com
           </a>
           . If you want to back the chase instead, the{" "}
-          <Link href="/#tiers" className="text-[--color-gold] hover:underline">
+          <Link href="/#tiers" className="text-[var(--color-gold)] hover:underline">
             tip jar is here
           </Link>
           .

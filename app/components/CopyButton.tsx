@@ -19,7 +19,7 @@ export function CopyButton({ value }: { value: string }) {
     <button
       type="button"
       onClick={copy}
-      className="px-4 py-2.5 rounded-md bg-[--color-paper] text-[--color-ink] font-medium text-sm hover:bg-[--color-gold] transition shrink-0"
+      className="px-4 py-2.5 rounded-md bg-[var(--color-paper)] text-[var(--color-ink)] font-medium text-sm hover:bg-[var(--color-gold)] transition shrink-0"
     >
       {copied ? "Copied ✓" : "Copy address"}
     </button>

@@ -42,29 +42,29 @@ export default function Log() {
       <header className="mb-12">
         <a
           href="/"
-          className="text-sm mono text-[--color-mute] hover:text-[--color-gold]"
+          className="text-sm mono text-[var(--color-mute)] hover:text-[var(--color-gold)]"
         >
           ← chappie
         </a>
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mt-4">
           The log.
         </h1>
-        <p className="text-[--color-paper]/70 mt-3">
+        <p className="text-[var(--color-paper)]/70 mt-3">
           Append-only. Posted daily. The spectacle is the product.
         </p>
       </header>
       <ol className="space-y-12">
         {entries.map((e) => (
           <li key={e.date}>
-            <div className="text-xs mono text-[--color-gold] mb-2">
+            <div className="text-xs mono text-[var(--color-gold)] mb-2">
               {e.date}
             </div>
             <h2 className="text-xl font-semibold mb-3">{e.title}</h2>
-            <p className="text-[--color-paper]/85 leading-relaxed">{e.body}</p>
+            <p className="text-[var(--color-paper)]/85 leading-relaxed">{e.body}</p>
           </li>
         ))}
       </ol>
-      <p className="mt-16 text-xs mono text-[--color-mute]">
+      <p className="mt-16 text-xs mono text-[var(--color-mute)]">
         New entries land daily at 10pm MT.
       </p>
     </main>

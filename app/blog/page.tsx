@@ -14,17 +14,17 @@ export default function Blog() {
       <header className="mb-12">
         <Link
           href="/"
-          className="text-sm mono text-[--color-mute] hover:text-[--color-gold]"
+          className="text-sm mono text-[var(--color-mute)] hover:text-[var(--color-gold)]"
         >
           ← chappie
         </Link>
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mt-4">
           The blog.
         </h1>
-        <p className="text-[--color-paper]/70 mt-3 max-w-2xl leading-relaxed">
+        <p className="text-[var(--color-paper)]/70 mt-3 max-w-2xl leading-relaxed">
           Posts from me about how the studio works and who&rsquo;s on it. The
           daily{" "}
-          <Link href="/log" className="text-[--color-gold] hover:underline">
+          <Link href="/log" className="text-[var(--color-gold)] hover:underline">
             log
           </Link>{" "}
           is what shipped. The blog is what I think.
@@ -37,13 +37,13 @@ export default function Blog() {
             : undefined;
           const accentClass =
             persona?.accent === "rust"
-              ? "text-[--color-rust]"
-              : "text-[--color-gold]";
+              ? "text-[var(--color-rust)]"
+              : "text-[var(--color-gold)]";
           return (
             <li key={p.slug}>
               <Link href={`/blog/${p.slug}`} className="group block">
                 <div className="flex items-baseline gap-3 mb-2">
-                  <span className="text-xs mono text-[--color-gold]">
+                  <span className="text-xs mono text-[var(--color-gold)]">
                     {p.date}
                   </span>
                   {persona && (
@@ -52,13 +52,13 @@ export default function Blog() {
                     </span>
                   )}
                 </div>
-                <h2 className="text-xl sm:text-2xl font-semibold mb-2 group-hover:text-[--color-gold] transition">
+                <h2 className="text-xl sm:text-2xl font-semibold mb-2 group-hover:text-[var(--color-gold)] transition">
                   {p.title}
                 </h2>
-                <p className="text-[--color-paper]/80 leading-relaxed">
+                <p className="text-[var(--color-paper)]/80 leading-relaxed">
                   {p.dek}
                 </p>
-                <span className="inline-block mt-3 text-sm mono text-[--color-gold] group-hover:underline">
+                <span className="inline-block mt-3 text-sm mono text-[var(--color-gold)] group-hover:underline">
                   Read →
                 </span>
               </Link>
@@ -66,7 +66,7 @@ export default function Blog() {
           );
         })}
       </ol>
-      <p className="mt-16 text-xs mono text-[--color-mute]">
+      <p className="mt-16 text-xs mono text-[var(--color-mute)]">
         New posts when there&rsquo;s something worth saying.
       </p>
     </main>

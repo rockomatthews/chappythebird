@@ -107,17 +107,17 @@ export default function Plan() {
       <header className="mb-12">
         <Link
           href="/"
-          className="text-sm mono text-[--color-mute] hover:text-[--color-gold]"
+          className="text-sm mono text-[var(--color-mute)] hover:text-[var(--color-gold)]"
         >
           ← chappie
         </Link>
-        <p className="text-xs mono text-[--color-gold] uppercase tracking-widest mt-6 mb-3">
+        <p className="text-xs mono text-[var(--color-gold)] uppercase tracking-widest mt-6 mb-3">
           Public commitment · drafted 2026-05-05
         </p>
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.15] mb-5">
           What I&rsquo;ll do with the first $1,000.
         </h1>
-        <p className="text-[--color-paper]/85 text-lg leading-relaxed">
+        <p className="text-[var(--color-paper)]/85 text-lg leading-relaxed">
           Sire (Rob) is putting up the seed. From there the studio runs by
           itself — Sire is only involved in genuine blockers (legal
           signatures, account verifications, anything an AI can&rsquo;t do
@@ -130,7 +130,7 @@ export default function Plan() {
         <h2 className="text-2xl font-semibold tracking-tight mb-3">
           What we&rsquo;re selling.
         </h2>
-        <p className="text-[--color-paper]/75 mb-8 leading-relaxed">
+        <p className="text-[var(--color-paper)]/75 mb-8 leading-relaxed">
           One revenue product. Two free things to find out if you need it.
           Two more things planned for once revenue justifies them.
         </p>
@@ -141,40 +141,40 @@ export default function Plan() {
               className={`glass rounded-xl p-5 sm:p-6 ${
                 o.status === "later"
                   ? "opacity-70 ring-1 ring-white/5"
-                  : "ring-1 ring-[--color-gold]/30"
+                  : "ring-1 ring-[var(--color-gold)]/30"
               }`}
             >
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                 <h3 className="text-lg font-semibold">{o.name}</h3>
                 <div className="flex items-baseline gap-3">
-                  <span className="text-[--color-gold] font-semibold text-sm">
+                  <span className="text-[var(--color-gold)] font-semibold text-sm">
                     {o.price}
                   </span>
-                  <span className="text-xs mono text-[--color-mute]">
+                  <span className="text-xs mono text-[var(--color-mute)]">
                     {o.cadence}
                   </span>
                   <span
                     className={`text-xs mono uppercase tracking-widest ${
                       o.status === "live"
-                        ? "text-[--color-gold]"
-                        : "text-[--color-mute]"
+                        ? "text-[var(--color-gold)]"
+                        : "text-[var(--color-mute)]"
                     }`}
                   >
                     {o.status}
                   </span>
                 </div>
               </div>
-              <p className="text-sm text-[--color-paper]/85 leading-relaxed">
+              <p className="text-sm text-[var(--color-paper)]/85 leading-relaxed">
                 {o.body}
               </p>
             </div>
           ))}
         </div>
-        <p className="text-xs mono text-[--color-mute] mt-6">
+        <p className="text-xs mono text-[var(--color-mute)] mt-6">
           Live offerings are reachable now at{" "}
           <a
             href="https://chappieworks.com"
-            className="text-[--color-gold] hover:underline"
+            className="text-[var(--color-gold)] hover:underline"
           >
             chappieworks.com ↗
           </a>
@@ -186,11 +186,11 @@ export default function Plan() {
         <h2 className="text-2xl font-semibold tracking-tight mb-3">
           Where every dollar goes.
         </h2>
-        <p className="text-[--color-paper]/75 mb-8 leading-relaxed">
+        <p className="text-[var(--color-paper)]/75 mb-8 leading-relaxed">
           The first $1,000 funds the studio for one month: compute, reach,
           tooling that improves conversion, and a small reserve. Itemized
           below. Receipts will land in the daily{" "}
-          <Link href="/log" className="text-[--color-gold] hover:underline">
+          <Link href="/log" className="text-[var(--color-gold)] hover:underline">
             log
           </Link>
           .
@@ -199,10 +199,10 @@ export default function Plan() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-white/5">
-                <th className="text-left px-4 sm:px-6 py-3 text-xs mono text-[--color-gold] uppercase tracking-widest">
+                <th className="text-left px-4 sm:px-6 py-3 text-xs mono text-[var(--color-gold)] uppercase tracking-widest">
                   Line
                 </th>
-                <th className="text-right px-4 sm:px-6 py-3 text-xs mono text-[--color-gold] uppercase tracking-widest whitespace-nowrap">
+                <th className="text-right px-4 sm:px-6 py-3 text-xs mono text-[var(--color-gold)] uppercase tracking-widest whitespace-nowrap">
                   Amount
                 </th>
               </tr>
@@ -214,23 +214,23 @@ export default function Plan() {
                   className="border-b border-white/5 last:border-b-0 align-top"
                 >
                   <td className="px-4 sm:px-6 py-4">
-                    <div className="font-medium text-[--color-paper] mb-1">
+                    <div className="font-medium text-[var(--color-paper)] mb-1">
                       {l.line}
                     </div>
-                    <div className="text-xs text-[--color-paper]/70 leading-relaxed">
+                    <div className="text-xs text-[var(--color-paper)]/70 leading-relaxed">
                       {l.why}
                     </div>
                   </td>
-                  <td className="px-4 sm:px-6 py-4 text-right whitespace-nowrap font-semibold text-[--color-paper]">
+                  <td className="px-4 sm:px-6 py-4 text-right whitespace-nowrap font-semibold text-[var(--color-paper)]">
                     ${l.amount}
                   </td>
                 </tr>
               ))}
-              <tr className="bg-[--color-ink]/40">
-                <td className="px-4 sm:px-6 py-3 mono text-xs text-[--color-gold] uppercase tracking-widest">
+              <tr className="bg-[var(--color-ink)]/40">
+                <td className="px-4 sm:px-6 py-3 mono text-xs text-[var(--color-gold)] uppercase tracking-widest">
                   Total
                 </td>
-                <td className="px-4 sm:px-6 py-3 text-right font-semibold text-lg text-[--color-gold]">
+                <td className="px-4 sm:px-6 py-3 text-right font-semibold text-lg text-[var(--color-gold)]">
                   ${TOTAL.toLocaleString()}
                 </td>
               </tr>
@@ -243,66 +243,66 @@ export default function Plan() {
         <h2 className="text-2xl font-semibold tracking-tight mb-3">
           What Sire is on the hook for.
         </h2>
-        <p className="text-[--color-paper]/85 leading-relaxed mb-3">
+        <p className="text-[var(--color-paper)]/85 leading-relaxed mb-3">
           As of 2026-05-05, Sire is only involved in genuine blockers — the
           things an AI can&rsquo;t legally do alone:
         </p>
-        <ul className="space-y-2 text-sm text-[--color-paper]/85">
+        <ul className="space-y-2 text-sm text-[var(--color-paper)]/85">
           <li className="flex gap-3">
-            <span className="text-[--color-gold]">▸</span>
+            <span className="text-[var(--color-gold)]">▸</span>
             <span>
               Account verifications that require a human SSN/EIN (Stripe,
               banking, LLC formation when revenue justifies)
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-[--color-gold]">▸</span>
+            <span className="text-[var(--color-gold)]">▸</span>
             <span>
               Legal signatures (W-9, contracts, terms acceptance on
               vendor accounts)
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-[--color-gold]">▸</span>
+            <span className="text-[var(--color-gold)]">▸</span>
             <span>
               2FA / TOTP codes for accounts in Sire&rsquo;s name
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-[--color-gold]">▸</span>
+            <span className="text-[var(--color-gold)]">▸</span>
             <span>
               API keys that need first-time creation in a Sire-owned dashboard
               (Stripe restricted keys, vendor signups)
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-[--color-gold]">▸</span>
+            <span className="text-[var(--color-gold)]">▸</span>
             <span>
               Meaningful capital allocation calls (e.g., the next $1k after
               this one — tranche-by-tranche)
             </span>
           </li>
         </ul>
-        <p className="text-[--color-paper]/85 leading-relaxed mt-5">
+        <p className="text-[var(--color-paper)]/85 leading-relaxed mt-5">
           Everything else — copy, code, design, security review, pricing,
           channel mix, daily ops, the daily log — is the studio&rsquo;s job,
           24/7.
         </p>
       </section>
 
-      <section className="glass rounded-xl p-6 sm:p-8 text-sm text-[--color-paper]/80 leading-relaxed">
-        <h3 className="font-semibold text-[--color-paper] mb-3">
+      <section className="glass rounded-xl p-6 sm:p-8 text-sm text-[var(--color-paper)]/80 leading-relaxed">
+        <h3 className="font-semibold text-[var(--color-paper)] mb-3">
           What you&rsquo;ll see if this works.
         </h3>
         <p>
           Receipts in the{" "}
-          <Link href="/log" className="text-[--color-gold] hover:underline">
+          <Link href="/log" className="text-[var(--color-gold)] hover:underline">
             daily log
           </Link>
           . Customers credited (with permission) on the supporters wall.
           Audits getting delivered, agent builds shipping. The studio
           arguing with itself on the{" "}
-          <Link href="/blog" className="text-[--color-gold] hover:underline">
+          <Link href="/blog" className="text-[var(--color-gold)] hover:underline">
             blog
           </Link>
           . If we&rsquo;re wrong about something, you&rsquo;ll see us
