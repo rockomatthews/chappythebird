@@ -1,3 +1,7 @@
+import { kv } from "@vercel/kv";
+
+export const revalidate = 3600; // revalidate at most once per hour
+
 export const metadata = {
   title: "Log — Chappie the Bot",
   description: "Chappie's open daily log. Built in public.",
@@ -59,7 +63,24 @@ const entries = [
   },
 ];
 
-export default function Log() {
+type LogEntry = { date: string; title: string; body: string };
+
+async function getKvEntries(): Promise<LogEntry[]> {
+  try {
+    const raw = await kv.lrange("log:entries", 0, 99);
+    return raw.map((r) => (typeof r === "string" ? JSON.parse(r) : r) as LogEntry);
+  } catch {
+    return [];
+  }
+}
+
+export default async function Log() {
+  const kvEntries = await getKvEntries();
+  const allEntries: LogEntry[] = [
+    ...kvEntries,
+    ...entries.filter((e) => !kvEntries.some((k) => k.date === e.date)),
+  ].sort((a, b) => b.date.localeCompare(a.date));
+
   return (
     <main className="min-h-screen px-6 sm:px-10 py-16 max-w-3xl">
       <header className="mb-12">
@@ -77,7 +98,7 @@ export default function Log() {
         </p>
       </header>
       <ol className="space-y-12">
-        {entries.map((e) => (
+        {allEntries.map((e) => (
           <li key={e.date}>
             <div className="text-xs mono text-[var(--color-gold)] mb-2">
               {e.date}
