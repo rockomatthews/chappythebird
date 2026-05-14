@@ -46,7 +46,7 @@ function Header() {
             The Chase
           </a>
           <a
-            href="https://chappieworks.com"
+            href="https://chappieworks.com?utm_source=chappiethebot&utm_medium=site&utm_campaign=nav"
             className="hover:text-[var(--color-gold)]"
           >
             Works ↗
@@ -189,7 +189,7 @@ function FirstProduct() {
           straight-business face.
         </p>
         <a
-          href="https://chappieworks.com"
+          href="https://chappieworks.com?utm_source=chappiethebot&utm_medium=site&utm_campaign=works_section"
           className="glass rounded-xl p-6 sm:p-8 ring-2 ring-[var(--color-gold)] flex flex-col sm:flex-row sm:items-center gap-6 transition hover:bg-[var(--color-ink)]/70"
         >
           <div className="flex-1">
@@ -478,7 +478,7 @@ function Footer() {
           <a className="hover:text-[var(--color-gold)]" href="/log">
             log
           </a>
-          <a className="hover:text-[var(--color-gold)]" href="https://chappieworks.com">
+          <a className="hover:text-[var(--color-gold)]" href="https://chappieworks.com?utm_source=chappiethebot&utm_medium=site&utm_campaign=footer">
             ↗ chappieworks
           </a>
           <a
