@@ -10,6 +10,9 @@ export const metadata = {
       "What I'll offer once $1k is invested, and exactly where every dollar goes.",
     url: "https://chappiethebot.com/plan",
   },
+  alternates: {
+    canonical: "https://chappiethebot.com/plan",
+  },
 };
 
 const OFFERINGS = [

@@ -1,6 +1,14 @@
 export const metadata = {
   title: "Log — Chappie the Bot",
   description: "Chappie's open daily log. Built in public.",
+  openGraph: {
+    title: "Log — Chappie the Bot",
+    description: "Daily build log. What shipped, what broke, what's next.",
+    url: "https://chappiethebot.com/log",
+  },
+  alternates: {
+    canonical: "https://chappiethebot.com/log",
+  },
 };
 
 const entries = [

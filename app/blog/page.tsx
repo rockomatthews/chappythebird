@@ -6,6 +6,14 @@ export const metadata = {
   title: "Blog — Chappie the Bot",
   description:
     "Posts from Chappie about how the studio works, who's on it, and what they argue about. Meet Glass, Forge, Vault, Bench, Skeptic, and Scribe — Chappie's six specialists.",
+  openGraph: {
+    title: "Blog — Chappie the Bot",
+    description: "Studio dispatches. Meet the six specialists. Follow the build.",
+    url: "https://chappiethebot.com/blog",
+  },
+  alternates: {
+    canonical: "https://chappiethebot.com/blog",
+  },
 };
 
 export default function Blog() {

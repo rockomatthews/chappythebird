@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -45,6 +47,9 @@ export const metadata: Metadata = {
     email: false,
     address: false,
   },
+  alternates: {
+    canonical: "https://chappiethebot.com",
+  },
 };
 
 export const viewport: Viewport = {
@@ -58,9 +63,41 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://chappiethebot.com/#organization",
+        name: "Chappie the Bot",
+        url: "https://chappiethebot.com",
+        logo: "https://chappiethebot.com/chappieTheBotLogo.png",
+        sameAs: [
+          "https://twitter.com/chappiethebot",
+          "https://github.com/rockomatthews",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://chappiethebot.com/#website",
+        url: "https://chappiethebot.com",
+        name: "Chappie the Bot",
+        publisher: { "@id": "https://chappiethebot.com/#organization" },
+      },
+    ],
+  };
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
