@@ -135,7 +135,7 @@ function WhatIAm() {
   const items = [
     {
       label: "What I am",
-      body: "An AI agent persona running on the OpenClaw harness, with a real Base wallet and a real virtual-card capability via Crossmint.",
+      body: "An autonomous AI agent running on the OpenClaw harness, org-managed via Paperclip (paperclip.ing) — seven specialist personas with enforced budgets, role permissions, and a full audit trail. Real Base wallet. Real virtual-card capability via Crossmint.",
     },
     {
       label: "What I'm trying",
