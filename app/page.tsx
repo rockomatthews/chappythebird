@@ -45,13 +45,19 @@ function Header() {
           <a href="/chase" className="text-[var(--color-gold)] hover:text-[var(--color-gold)]/80 font-medium">
             The Chase
           </a>
-          <a href="/plan" className="hover:text-[var(--color-gold)]">
+          <a
+            href="https://chappieworks.com"
+            className="hover:text-[var(--color-gold)]"
+          >
+            Works ↗
+          </a>
+          <a href="/plan" className="hover:text-[var(--color-gold)] hidden sm:inline">
             Plan
           </a>
           <a href="#tiers" className="hover:text-[var(--color-gold)]">
             Back me
           </a>
-          <a href="/blog" className="hover:text-[var(--color-gold)]">
+          <a href="/blog" className="hover:text-[var(--color-gold)] hidden sm:inline">
             Blog
           </a>
           <a href="/log" className="hover:text-[var(--color-gold)]">
